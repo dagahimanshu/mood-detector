@@ -59,8 +59,6 @@ Analyze a single image for mood detection.
 ```json
 {
   "confidence": 0.7016,
-  "imageHeight": 1352,
-  "imageWidth": 1518,
   "metrics": {
     "brightness": 0.5275,
     "contrast": 0.4677,
@@ -234,44 +232,9 @@ spring.jackson.serialization.indent-output=true
 - **Base Image**: eclipse-temurin:21-jre-alpine (production)
 - **Multi-stage Docker Build**: Optimized for smaller image size
 
-## Error Handling
-
-The application handles errors gracefully with appropriate HTTP status codes:
-
-- **400 Bad Request**: Invalid image format or file size exceeds limits
-- **500 Internal Server Error**: Processing error or unexpected exception
-- **Global Exception Handler**: Centralized error handling with meaningful messages
-
-## Testing
-
-Run the test suite:
-
-```bash
-./mvnw test
-```
-
-Tests are located in `src/test/java/com/mooddetector/mood_detector/`
-
 ## Development Notes
 
 - The application uses Lombok for reducing boilerplate code
 - SLF4J is used for logging throughout the application
 - Spring's dependency injection is used for service management
 - Multipart file upload is enabled with configured size limits
-
-## License
-
-[Add your license information here]
-
-## Contributing
-
-[Add contribution guidelines here]
-
-## Support
-
-For issues, questions, or contributions, please [add support information here]
-
----
-
-**Version**: 0.0.1-SNAPSHOT  
-**Last Updated**: 2026-04-01
