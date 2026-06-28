@@ -48,6 +48,8 @@ build/
 # Local environment
 .env
 .env.local
+application-local.properties
+**/application-local.properties
 *.log
 logs/
 

@@ -27,7 +27,9 @@ public class ImageMoodController {
     public ResponseEntity<MoodResult> analyze(@RequestPart("image") MultipartFile image) {
         log.info("Received: {} ({} bytes)", image.getOriginalFilename(), image.getSize());
         try {
-            return ResponseEntity.ok(analysisService.analyze(image));
+            MoodResult result = analysisService.analyze(image);
+            log.info("Result: {}", result);
+            return ResponseEntity.ok(result);
         } catch (IllegalArgumentException e) {
             log.warn("Bad request: {}", e.getMessage());
             return ResponseEntity.badRequest().build();
